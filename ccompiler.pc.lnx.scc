@@ -1,0 +1,10 @@
+# Sun Studio cc compiler
+
+#
+#  C compilation and loading
+#
+
+CC=suncc
+CCBASIC='-c'
+CCDEBUG= #-g -DDEBUG_GALAHAD
+CCFFLAGS=
