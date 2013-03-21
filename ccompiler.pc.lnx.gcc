@@ -5,6 +5,6 @@
 #
 
 CC=gcc
-CCBASIC='-c -ansi -pedantic' # -pedantic-errors'
+CCBASIC='-c -ansi -pedantic' # -pedantic-errors -O0'
 CCDEBUG= #-g -DDEBUG_GALAHAD
 CCFFLAGS=-lgfortran
