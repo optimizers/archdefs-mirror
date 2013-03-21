@@ -5,6 +5,7 @@
 
 FORTRAN='gfortran'
 BASIC='-c -fno-second-underscore'
+MBASIC='-fno-second-underscore'
 LIBCMD=''
 #MODCMD='-module $MOD -I$MOD'
 MODCMD='-I$MOD'
