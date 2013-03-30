@@ -33,4 +33,4 @@ HEAD="/usr/bin/head"
 TAIL="/usr/bin/tail"
 WC="/usr/bin/wc"
 MAKE="/usr/bin/make"
-RANLIB="true"
+RANLIB="true"  # Ranlib isn't useful on OSX.
