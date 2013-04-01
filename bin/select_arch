@@ -327,8 +327,8 @@ yesno_default_no ' Would you like to review and modify the system commands'
 
 source $ARCH/system.$OS
 
-MATLABGCC="gcc-4.4"
-MATLABGFORTRAN="gfortran-4.4"
+MATLABGCC="gcc-4.3"
+MATLABGFORTRAN="gfortran-4.3"
 
 if (( $MATLAB_REQUIRED )); then
   COMP=( `$LS $ARCH/compiler.${MCH}.${OS}.gfo 2>/dev/null` )
@@ -484,9 +484,9 @@ if (( $AMPL_REQUIRED )); then
      echo ' AMPLDIR environment variable is not currently set'
      YESNO='N'
   fi
-  
+
   CORRECT_AMPLLIBDIR="false"
-  while [[ $CORRECT_AMPLLIBDIR == "false" ]]; do 
+  while [[ $CORRECT_AMPLLIBDIR == "false" ]]; do
      if [[ $YESNO == 'N' ]]; then
         echo ' Please give the name of the directory'
         echo ' containing the AMPL interface library:'
