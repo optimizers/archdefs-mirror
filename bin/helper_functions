@@ -12,7 +12,7 @@ yesno_default_yes() {
     read -p "$1 (Y/n)? " -r -n 1 answer;
     [[ $answer == [Nn] ]] && retval=0 || retval=1
     echo
-    return $retval  # retval=0 means yes.
+    return $retval  # retval=1 means yes.
 }
 
 warning() {
