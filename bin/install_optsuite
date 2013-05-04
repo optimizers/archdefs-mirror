@@ -378,6 +378,10 @@ echo ""
 echo " setenv MYARCH $VERSION"
 if (( $MATLAB_REQUIRED )); then 
   echo " setenv MYMATLABARCH $VERSION"
+  echo ""
+  echo " set MYMATLAB so that $MYMATLAB/bin contains Matlab's mex executable"
+  echo ""
+  echo " setenv MYMATLAB [directory containing your installed Matlab]"
   if (( $install_cutest )) || (( $install_galahad )); then
     echo ""
     echo " and possibly extend your Matlab search path with"
@@ -432,6 +436,10 @@ echo ""
 echo ' export MYARCH="'"$VERSION"'"'
 if (( $MATLAB_REQUIRED )); then 
   echo ' export MYMATLABARCH="'"$VERSION"'"'
+  echo ""
+  echo " set MYMATLAB so that $MYMATLAB/bin contains Matlab's mex executable"
+  echo ""
+  echo " export MYMATLAB=[directory containing your installed Matlab]"
   if (( $install_cutest )) || (( $install_galahad )); then
     echo ""
     echo " and possibly extend your Matlab search path with"
