@@ -24,6 +24,7 @@ F95SUFFIX=f95
 TIMER=GEN
 BLAS=
 LAPACK=
+IEEECK=
 HSL=
 METIS='-lgalahad_metis'
 PARDISO='-lgalahad_pardiso'
