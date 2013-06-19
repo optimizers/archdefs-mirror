@@ -29,6 +29,7 @@ F95SUFFIX=f90
 TIMER=GEN
 BLAS='-L${MKLROOT}/lib/32 -lmkl_core -lmkl_intel -lmkl_intel_thread'
 LAPACK='-L${MKLROOT}/lib/32 -lmkl_lapack'
+IEEECK=
 HSL=
 METIS='-lgalahad_metis'
 PARDISO='-lgalahad_pardiso'
