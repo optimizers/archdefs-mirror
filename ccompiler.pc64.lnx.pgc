@@ -5,6 +5,6 @@
 #
 
 CC=pgcc
-CCBASIC='-c -Xs'
+CCBASIC='-c -Xs -DIspgf'
 CCDEBUG= #-g -DDEBUG_GALAHAD
 CCFFLAGS=
