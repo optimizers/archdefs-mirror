@@ -5,6 +5,6 @@
 #
 
 CC=icc
-CCBASIC='-c -ansi'
+CCBASIC='-c -ansi -DIsifr'
 CCDEBUG=#-DDEBUG_GALAHAD
 CCFFLAGS=-nofor_main

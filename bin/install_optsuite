@@ -127,12 +127,12 @@ if (( $install_galahad )); then
      echo ' (the chosen subset will optionally be installed below)'
      echo
      echo '    (E) Provide all available interfaces (CUTEst, Matlab, AMPL)'
-     echo '    (X) Provide all available interfaces except to Matlab'
      if [[ $SUBSET == "lanb" ]] ; then
        echo '    (S) Provide an interface to SIF'
      elif [[ $SUBSET == "filtrane" ]] ; then
        echo '    (C) Provide CUTEst interfaces'
      else 
+       echo '    (X) Provide all available interfaces except to Matlab'
        echo '    (B) Provide all available interfaces except to AMPL'
        echo '    (C) Provide CUTEst interfaces'
        echo '    (M) Provide Matlab interfaces'
