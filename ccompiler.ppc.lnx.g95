@@ -1,0 +1,10 @@
+# GCC for use with g95
+
+#
+#  C compilation and loading
+#
+
+CC=gcc
+CCBASIC='-c -ansi -pedantic -DIsg95' # -pedantic-errors'
+CCDEBUG= #-g -DDEBUG_GALAHAD
+CCFFLAGS=-lgfortran
