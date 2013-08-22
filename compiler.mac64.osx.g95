@@ -3,8 +3,8 @@
 # Fortran compilation and loading
 #
 
-FORTRAN='g95'
-BASIC='-c'
+FORTRAN='g95 '
+BASIC='-c -fno-second-underscore -arch i386'
 LIBCMD=''
 #MODCMD='-module $MOD -I$MOD'
 MODCMD='-I$MOD'

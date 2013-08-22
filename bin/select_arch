@@ -425,7 +425,13 @@ if (( $AMPL_REQUIRED )) || (( $MATLAB_REQUIRED )) || \
     fi
   else
     echo -e ' Select C compiler\n'
-    CCOMP=( `$LS $ARCH/ccompiler.${MCH}.${OS}.* $ARCH/ccompiler.all.all.*`)
+    CCOMPB=( `$LS $ARCH/ccompiler.${MCH}.${OS}.* $ARCH/ccompiler.all.all.*`)
+    echo "${CMP} g95"
+    if [ "${CMP}" == "g95" ]; then
+      declare -a CCOMP=( ${CCOMPB[@]/*.gcc/} )
+    else
+      declare -a CCOMP=( ${CCOMPB[@]/*.g95/} )
+    fi
     NUMBER=${#CCOMP[@]}
     LIST=( ${CCOMP[@]} )
     let count=-1

@@ -5,7 +5,7 @@
 #
 
 FORTRAN='g95'
-BASIC='-c'
+BASIC='-c -fno-second-underscore -arch i386'
 LIBCMD=''
 #MODCMD='-module $MOD -I$MOD'
 MODCMD='-I$MOD'
