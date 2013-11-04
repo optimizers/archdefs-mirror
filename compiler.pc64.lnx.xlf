@@ -26,6 +26,7 @@ BLAS=
 LAPACK=
 IEEECK=
 HSL=
+RALMATH='-lgalahad_ralmath'
 METIS='-lgalahad_metis'
 PARDISO='-lgalahad_pardiso'
 WSMP='-lgalahad_wsmp'
