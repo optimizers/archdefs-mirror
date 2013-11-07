@@ -1,0 +1,10 @@
+# generic GCC 
+
+#
+#  C compilation and loading
+#
+
+CC=gcc
+CCBASIC=-c
+CCDEBUG=#-DDEBUG_GALAHAD
+CCFFLAGS=
