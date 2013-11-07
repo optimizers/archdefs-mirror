@@ -1,20 +1,20 @@
-# GNU g95 compiler
-# Opteron 64-bit version
+# Nvidia nvcc/GNU gfortran cross compiler
 #
 # Fortran compilation and loading
 #
 
-FORTRAN='g95'
-BASIC='-c -fPIC -fno-second-underscore'
+FORTRAN='gfortran'
+BASIC='-c -fno-second-underscore -fPIC'
+MBASIC='-fno-second-underscore -fPIC'
 LIBCMD=''
 #MODCMD='-module $MOD -I$MOD'
 MODCMD='-I$MOD'
-MVMODS='$(MV) -f $(OBJ)/*.mod $(MOD)/'
+MVMODS='$(MV) -f $(OBJ)/*.mod $(MOD)/ || true'
 #MVMODS=':'
 OPTIMIZATION='-O'
 NOOPTIMIZATION='-O0'
 DEBUG=
-OPENMP=
+OPENMP='-fopenmp'
 F77='-ffixed-form'
 F90=''
 F95=''
@@ -24,10 +24,10 @@ USUAL=
 SPECIAL=
 F77SUFFIX=f90
 F95SUFFIX=f90
-CUDACOMP=$FORTRAN
-CUDABASIC=
-CUDALIBS=
-CUDAOPENMP=$OPENMP
+CUDACOMP='nvcc'
+CUDABASIC="-Iinclude -arch=sm_20 -Xptxas='-v'"
+CUDALIBS='-lcuda -lrt -lcublas -lgfortran -lgomp'
+CUDAOPENMP='-Xcompiler -openmp'
 TIMER=GEN
 BLAS=
 LAPACK=
@@ -38,6 +38,5 @@ METIS='-lgalahad_metis'
 PARDISO='-lgalahad_pardiso'
 WSMP='-lgalahad_wsmp'
 NOT95=IS95
-NOT64=NOT64
+NOT64=IS64
 BINSHELL=sh
-MA97BUG=g95
