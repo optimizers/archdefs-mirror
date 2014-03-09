@@ -327,12 +327,59 @@ yesno_default_no ' Would you like to review and modify the system commands'
 
 source $ARCH/system.$OS
 
-if [[ ${OS} == "osx" ]]; then
-  MATLABGCC="gcc-4.3"
-  MATLABGFORTRAN="gfortran-4.3"
+if (( $MATLAB_REQUIRED )); then
+  CORRECT_MATLAB="false"
+  while [ $CORRECT_MATLAB == "false" ]; do
+     echo -e ' Select Matlab version\n'
+     echo '   (1) before R2011a'
+     echo '   (2) R2011a-R2013a'
+     echo '   (3) R2013b or later'
+
+     read CHOICE
+
+     case  $CHOICE  in
+         "1")
+              CORRECT_MATLAB="true"
+              if [[ ${OS} == "osx" ]]; then
+                MATLABGCC="gcc"
+                MATLABGFORTRAN="g95"
+              else
+                MATLABGCC="gcc"
+                MATLABGFORTRAN="g95"
+              fi
+;;
+         "2")
+              CORRECT_MATLAB="true"
+              if [[ ${OS} == "osx" ]]; then
+                MATLABGCC="gcc-4.3"
+                MATLABGFORTRAN="gfortran-4.3"
+              else
+                MATLABGCC="gcc-4.4"
+                MATLABGFORTRAN="gfortran-4.4"
+              fi
+;;
+         "3")
+              CORRECT_MATLAB="true"
+              if [[ ${OS} == "osx" ]]; then
+                MATLABGCC="gcc-4.3"
+                MATLABGFORTRAN="gfortran-4.3"
+              else
+                MATLABGCC="gcc-4.7"
+                MATLABGFORTRAN="gfortran-4.7"
+              fi
+;;
+         *)
+           echo ' Please give an integer between 1 and 3'
+     esac
+  done
 else
-  MATLABGCC="gcc-4.4"
-  MATLABGFORTRAN="gfortran-4.4"
+  if [[ ${OS} == "osx" ]]; then
+    MATLABGCC="gcc-4.3"
+    MATLABGFORTRAN="gfortran-4.3"
+  else
+    MATLABGCC="gcc-4.7"
+    MATLABGFORTRAN="gfortran-4.7"
+  fi
 fi
 
 if (( $MATLAB_REQUIRED )); then
@@ -516,4 +563,8 @@ if (( $AMPL_REQUIRED )); then
 else
   AMPLLIBDIR=
 fi
+
+
+
+
 
