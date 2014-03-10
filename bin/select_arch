@@ -473,7 +473,7 @@ if (( $AMPL_REQUIRED )) || (( $MATLAB_REQUIRED )) || \
   else
     echo -e ' Select C compiler\n'
     CCOMPB=( `$LS $ARCH/ccompiler.${MCH}.${OS}.* $ARCH/ccompiler.all.all.*`)
-    echo "${CMP} g95"
+#   echo "${CMP} g95"
     if [ "${CMP}" == "g95" ]; then
       declare -a CCOMP=( ${CCOMPB[@]/*.gcc/} )
     else
