@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -vx
 # Build script for SIFDecode / CUTEst / GALAHAD
 
 # syntax: select_arch
@@ -550,14 +550,15 @@ if (( $AMPL_REQUIRED )); then
         echo ' containing the AMPL interface library:'
         read AMPLLIBDIR
      fi
-     if [[ -e $AMPLLIBDIR/amplsolver.a ]]; then
+#    if [[ -e $AMPLLIBDIR/amplsolver.a ]]; then
+     if [[ -e $AMPLLIBDIR/solvers/amplsolver.a ]]; then
         CORRECT_AMPLLIBDIR="true"
      else
         echo " The directory $AMPLLIBDIR"
         echo " does not appear to contain a working AMPL interface library."
         YESNO='N'
         yesno_default_no ' Do you wish to abort'
-        [[ $? != 1 ]] && exit 4
+        [[ $? != 0 ]] && exit 4
      fi
   done
 else
