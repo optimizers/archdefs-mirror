@@ -551,7 +551,9 @@ if (( $AMPL_REQUIRED )); then
         read AMPLLIBDIR
      fi
 #    if [[ -e $AMPLLIBDIR/amplsolver.a ]]; then
-     if [[ -e $AMPLLIBDIR/solvers/amplsolver.a ]]; then
+#    if [[ -e $AMPLLIBDIR/solvers/amplsolver.a ]]; then
+     if [[ -e $AMPLLIBDIR/amplsolver.a || \
+           -e $AMPLLIBDIR/solvers/amplsolver.a ]]; then
         CORRECT_AMPLLIBDIR="true"
      else
         echo " The directory $AMPLLIBDIR"
