@@ -7,4 +7,4 @@
 CC=gcc
 CCBASIC=-c
 CCDEBUG=#-DDEBUG_GALAHAD
-CCFFLAGS=
+CCFFLAGS='-lgfortran -lm'
