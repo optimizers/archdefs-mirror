@@ -1,0 +1,10 @@
+# Portland PGCC
+
+#
+#  C compilation and loading
+#
+
+CC=pgcc
+CCBASIC='-c -fPIC -Xs -DIspgf'
+CCDEBUG= #-g -DDEBUG_GALAHAD
+CCFFLAGS=
