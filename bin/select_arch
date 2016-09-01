@@ -448,10 +448,21 @@ fi
 
 VERSION=${MCH}.${OS}.${CMP}
 
+#  use ssids as the default symmetric linear solver iff OMP4 is available
+
+if [ $OMP4 == "yes" ]; then
+ SSIDS_REQUIRED=1
+ SSIDS="ssids"
+ SPRAL="$SPRAL -lstdc++ -lhwloc"
+else
+ SSIDS_REQUIRED=0
+ SSIDS="ssids_dum"
+fi
+
 #  if a C compiler is required, get details
 
 if (( $AMPL_REQUIRED )) || (( $MATLAB_REQUIRED )) || \
-   (( $CUTEST_REQUIRED )); then
+   (( $CUTEST_REQUIRED )) || (( $SSIDS_REQUIRED )); then
   if (( $MATLAB_REQUIRED )); then
     CCOMP=( `$LS $ARCH/ccompiler.${MCH}.${OS}.gcc 2>/dev/null` )
     NUMBER=${#CCOMP[@]}
@@ -464,6 +475,7 @@ if (( $AMPL_REQUIRED )) || (( $MATLAB_REQUIRED )) || \
       CCOMPILER="ccompiler.${MCH}.${OS}.gcc"
       #CMP="gcc"
       CCOMPUSED=`$LS $ARCH/ccompiler.${MCH}.${OS}.gcc 2>/dev/null`
+      SSIDS="ssids_dum"
     else
       error " GNU $MATLABGFORTRAN/$MATLABGCC compilers required for
  Matlab compatibility not available.

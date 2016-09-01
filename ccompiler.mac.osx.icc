@@ -8,3 +8,10 @@ CC=icc
 CCBASIC='-c -ansi -vec-report0 -DIsifr' # -mmacosx-version-min=10.4'
 CCDEBUG=#-DDEBUG_GALAHAD
 CCFFLAGS=-nofor_main
+
+CXX='$(CC)'
+CXXBASIC='-c -std=c++11'
+CXXOPT=-O2
+CXXNOOPT=-O0
+CXXDEBUG=''
+CXXFFLAGS='

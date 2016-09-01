@@ -8,16 +8,16 @@
 FORTRAN='ifort'
 BASIC='-c'
 LIBCMD=''
-#for ifc pre version 7 replace next line by 
+#for ifc pre version 7 replace next line by
 #MODCMD='-cl,$MOD/work.pcl -Vaxlib'
-#for ifc versions 7-9 replace next line by 
+#for ifc versions 7-9 replace next line by
 #MODCMD='-module $MOD -I$MOD -Vaxlib'
 MODCMD='-module $MOD -I$MOD'
 MVMODS=':'
 OPTIMIZATION='-O'
 NOOPTIMIZATION='-O0'
 DEBUG=
-OPENMP='-openmp'
+OPENMP='-qopenmp'
 #F77='-fixed -warn -warn nointerfaces'
 F77='-fixed -warn -warn nogeneral'
 F90='-warn nogeneral'
@@ -35,6 +35,7 @@ CUDAOPENMP=$OPENMP
 TIMER=GEN
 BLAS=
 LAPACK=
+OMP4=yes
 IEEECK=
 HSL=
 SPRAL='-lgalahad_spral'

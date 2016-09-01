@@ -1,15 +1,15 @@
-# Portland PGCC
+# GCC 6
 
 #
 #  C compilation and loading
 #
 
-CC=pgcc
-CCBASIC='-c -Xs -DIspgf'
+CC=gcc-6
+CCBASIC='-c -ansi -pedantic -fPIC' # -pedantic-errors -O0'
 CCDEBUG= #-g -DDEBUG_GALAHAD
-CCFFLAGS=
+CCFFLAGS='-lgfortran -lm'
 
-CXX=PGCC
+CXX=g++-6
 CXXBASIC='-c -std=c++11'
 CXXOPT=-O2
 CXXNOOPT=-O0

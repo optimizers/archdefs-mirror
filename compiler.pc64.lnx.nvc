@@ -31,6 +31,7 @@ CUDAOPENMP='-Xcompiler -openmp'
 TIMER=GEN
 BLAS=
 LAPACK=
+OMP4=no
 IEEECK=
 HSL=
 SPRAL='-lgalahad_spral'

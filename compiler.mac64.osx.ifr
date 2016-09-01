@@ -8,7 +8,7 @@
 FORTRAN='ifort'
 BASIC='-c -vec-report0'
 LIBCMD=''
-#for ifc pre version 7 replace next line by 
+#for ifc pre version 7 replace next line by
 #MODCMD='-cl,$MOD/work.pcl -Vaxlib'
 #MODCMD='-module $MOD -I$MOD -Vaxlib'
 MODCMD='-module $MOD -I$MOD'
@@ -33,6 +33,7 @@ CUDAOPENMP=$OPENMP
 TIMER=GEN
 BLAS='-L${MKLROOT}/lib/32 -lmkl_core -lmkl_intel -lmkl_intel_thread'
 LAPACK='-L${MKLROOT}/lib/32 -lmkl_lapack'
+OMP4=yes
 IEEECK=
 HSL=
 SPRAL='-lgalahad_spral'
