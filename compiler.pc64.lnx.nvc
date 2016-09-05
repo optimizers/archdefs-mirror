@@ -1,4 +1,4 @@
-# Nvidia nvcc/GNU gfortran cross compiler
+# Nvidia nvcc/GNU gfortran cross compiler (NB:CUDA arch and code hard wired so change!)
 #
 # Fortran compilation and loading
 #
@@ -24,8 +24,11 @@ USUAL=
 SPECIAL=
 F77SUFFIX=f90
 F95SUFFIX=f90
+CUDA='cuda'
 CUDACOMP='nvcc'
-CUDABASIC="-Iinclude -arch=sm_20 -Xptxas='-v'"
+CUDAARCH='compute_35'
+CUDACODE='sm_35'
+CUDABASIC="-Iinclude -Xptxas='-v'"
 CUDALIBS='-lcuda -lrt -lcublas -lgfortran -lgomp'
 CUDAOPENMP='-Xcompiler -openmp'
 TIMER=GEN
