@@ -28,7 +28,7 @@ CUDA='cuda'
 CUDACOMP='nvcc'
 CUDAARCH='compute_35'
 CUDACODE='sm_35'
-CUDABASIC="-dc -I. -Iinclude -Xptxas='-v'"
+CUDABASIC="-dc -I. -Iinclude"
 CUDALIBS='-lcuda -lrt -lcublas -lgfortran -lgomp'
 CUDAOPENMP='-Xcompiler -openmp'
 TIMER=GEN
