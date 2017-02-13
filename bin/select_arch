@@ -333,7 +333,8 @@ if (( $MATLAB_REQUIRED )); then
      echo -e ' Select Matlab version\n'
      echo '   (1) before R2011a'
      echo '   (2) R2011a-R2013a'
-     echo '   (3) R2013b or later'
+     echo '   (3) R2013b-R2016a'
+     echo '   (4) R2016b or later'
 
      read CHOICE
 
@@ -368,8 +369,18 @@ if (( $MATLAB_REQUIRED )); then
                 MATLABGFORTRAN="gfortran-4.7"
               fi
 ;;
+         "4")
+              CORRECT_MATLAB="true"
+              if [[ ${OS} == "osx" ]]; then
+                MATLABGCC="gcc-4.3"
+                MATLABGFORTRAN="gfortran-4.3"
+              else
+                MATLABGCC="gcc-4.9"
+                MATLABGFORTRAN="gfortran-4.9"
+              fi
+;;
          *)
-           echo ' Please give an integer between 1 and 3'
+           echo ' Please give an integer between 1 and 4'
      esac
   done
 else
@@ -377,8 +388,8 @@ else
     MATLABGCC="gcc-4.3"
     MATLABGFORTRAN="gfortran-4.3"
   else
-    MATLABGCC="gcc-4.7"
-    MATLABGFORTRAN="gfortran-4.7"
+    MATLABGCC="gcc-4.9"
+    MATLABGFORTRAN="gfortran-4.9"
   fi
 fi
 
