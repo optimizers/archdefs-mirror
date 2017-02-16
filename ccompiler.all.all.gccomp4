@@ -1,0 +1,17 @@
+# generic GCC with OMP 4.0 support
+
+#
+#  C compilation and loading
+#
+
+CC=gcc-4.9
+CCBASIC=-c
+CCDEBUG=#-DDEBUG_GALAHAD
+CCFFLAGS='-lgfortran -lm'
+
+CXX=g++
+CXXBASIC='-c -std=c++11'
+CXXOPT=-O2
+CXXNOOPT=-O0
+CXXDEBUG=''
+CXXFFLAGS=''

@@ -1,0 +1,47 @@
+# GNU gfortran 4 compiler with OMP 4.0 support
+#
+# Fortran compilation and loading
+#
+
+FORTRAN='gfortran-4.9'
+BASIC='-c -fno-second-underscore -fPIC'
+MBASIC='-fno-second-underscore -fPIC'
+LIBCMD=''
+#MODCMD='-module $MOD -I$MOD'
+MODCMD='-I$MOD'
+MVMODS='$(MV) -f $(OBJ)/*.mod $(MOD)/ || true'
+#MVMODS=':'
+OPTIMIZATION='-O'
+NOOPTIMIZATION='-O0'
+DEBUG=
+OPENMP='-fopenmp'
+F77='-ffixed-form'
+F90=''
+F95=''
+NOFMAIN=''
+CCONDEF=
+USUAL=
+SPECIAL=
+F77SUFFIX=f90
+F95SUFFIX=f90
+CUDA=
+CUDACOMP=$FORTRAN
+CUDAARCH=
+CUDACODE=
+CUDABASIC=
+CUDALIBS=
+CUDAOPENMP=$OPENMP
+CUDAOPENMP=$OPENMP
+TIMER=GEN
+BLAS=
+LAPACK=
+OMP4=yes
+IEEECK=
+HSL=
+SPRAL='-lgalahad_spral'
+METIS='-lgalahad_metis'
+PARDISO='-lgalahad_pardiso'
+WSMP='-lgalahad_wsmp'
+NOT95=IS95
+NOT64=IS64
+BINSHELL=sh
