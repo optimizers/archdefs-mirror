@@ -328,6 +328,7 @@ yesno_default_no ' Would you like to review and modify the system commands'
 source $ARCH/system.$OS
 
 if (( $MATLAB_REQUIRED )); then
+  MATLABOMP4="no"
   CORRECT_MATLAB="false"
   while [ $CORRECT_MATLAB == "false" ]; do
      echo -e ' Select Matlab version\n'
@@ -343,9 +344,11 @@ if (( $MATLAB_REQUIRED )); then
               CORRECT_MATLAB="true"
               if [[ ${OS} == "osx" ]]; then
                 MATLABGCC="gcc"
+                MATLABGCXX="g++"
                 MATLABGFORTRAN="g95"
               else
                 MATLABGCC="gcc"
+                MATLABGCXX="g++"
                 MATLABGFORTRAN="g95"
               fi
 ;;
@@ -353,9 +356,11 @@ if (( $MATLAB_REQUIRED )); then
               CORRECT_MATLAB="true"
               if [[ ${OS} == "osx" ]]; then
                 MATLABGCC="gcc-4.3"
+                MATLABGCXX="g++-4.3"
                 MATLABGFORTRAN="gfortran-4.3"
               else
                 MATLABGCC="gcc-4.4"
+                MATLABGCXX="g++-4.4"
                 MATLABGFORTRAN="gfortran-4.4"
               fi
 ;;
@@ -363,9 +368,11 @@ if (( $MATLAB_REQUIRED )); then
               CORRECT_MATLAB="true"
               if [[ ${OS} == "osx" ]]; then
                 MATLABGCC="gcc-4.3"
+                MATLABGCXX="g++-4.3"
                 MATLABGFORTRAN="gfortran-4.3"
               else
                 MATLABGCC="gcc-4.7"
+                MATLABGCXX="g++-4.7"
                 MATLABGFORTRAN="gfortran-4.7"
               fi
 ;;
@@ -373,10 +380,13 @@ if (( $MATLAB_REQUIRED )); then
               CORRECT_MATLAB="true"
               if [[ ${OS} == "osx" ]]; then
                 MATLABGCC="gcc-4.3"
+                MATLABGCXX="g++-4.3"
                 MATLABGFORTRAN="gfortran-4.3"
               else
                 MATLABGCC="gcc-4.9"
+                MATLABGCXX="g++-4.9"
                 MATLABGFORTRAN="gfortran-4.9"
+                MATLABOMP4="yes"
               fi
 ;;
          *)
@@ -455,6 +465,8 @@ yesno_default_no ' Would you like to review and modify the fortran compiler sett
 source $ARCH/$COMPILER
 if (( $MATLAB_REQUIRED )); then
   FORTRAN=$MATLABGFORTRAN
+  CUDACOMP=$MATLABGFORTRAN
+  OMP4=$MATLABOMP4
 fi
 
 VERSION=${MCH}.${OS}.${CMP}
@@ -543,6 +555,7 @@ if (( $AMPL_REQUIRED )) || (( $MATLAB_REQUIRED )) || \
   source $ARCH/$CCOMPILER
   if (( $MATLAB_REQUIRED )); then
     CC=$MATLABGCC
+    CXX=$MATLABGCXX
   fi
 fi
 
