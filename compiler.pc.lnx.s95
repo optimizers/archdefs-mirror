@@ -7,6 +7,7 @@ FORTRAN='sunf95'
 BASIC='-c'
 LIBCMD=''
 MODCMD='-M$MOD -I$MOD'
+MODCMDB=$MODCMD
 MVMODS='$(MV) -f $(OBJ)/*.mod $(MOD)/'
 OPTIMIZATION='-xO5 -xarch=ssse3 -xdepend=yes -dalign -fsimple=2 -fns=yes -ftrap=common -xlibmil -nofstore -xregs=frameptr'
 #OPTIMIZATION=''

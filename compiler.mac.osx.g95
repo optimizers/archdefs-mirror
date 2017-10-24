@@ -7,10 +7,9 @@
 FORTRAN='g95'
 BASIC='-c -fno-second-underscore -arch i386'
 LIBCMD=''
-#MODCMD='-module $MOD -I$MOD'
 MODCMD='-I$MOD'
+MODCMDB=$MODCMD
 MVMODS='$(MV) -f $(OBJ)/*.mod $(MOD)/'
-#MVMODS=':'
 OPTIMIZATION='-O'
 NOOPTIMIZATION='-O0'
 DEBUG=

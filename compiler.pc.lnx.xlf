@@ -7,6 +7,7 @@ FORTRAN='xlf95'
 BASIC='-c -qhalt=s -qmaxmem=-1 -qspillsize=20000'
 LIBCMD=''
 MODCMD='-qmoddir=$MOD -I $MOD'
+MODCMDB=$MODCMD
 MVMODS=':'
 OPTIMIZATION='-O5'
 NOOPTIMIZATION=''

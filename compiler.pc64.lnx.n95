@@ -9,10 +9,12 @@ FORTRAN='nagfor'
 BASIC='-c -dcfuns'
 LIBCMD=''
 MODCMD='-I$MOD'
+MODCMDB=$MODCMD
 MVMODS='$(MV) -f $(OBJ)/*.mod $(MOD)/'
 OPTIMIZATION='-O'
 NOOPTIMIZATION='-O0'
 DEBUG=
+DEBUG='-C=all -gline -nan -g'
 OPENMP=
 F77='-fixed -w'
 F90='-w'

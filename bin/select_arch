@@ -473,6 +473,8 @@ VERSION=${MCH}.${OS}.${CMP}
 
 #  use ssids as the default symmetric linear solver iff OMP4 is available
 
+#echo "omp4 ? " $OMP4
+
 if [ $OMP4 == "yes" ]; then
  SSIDS_REQUIRED=1
  SSIDS="ssids"
@@ -508,9 +510,11 @@ if (( $AMPL_REQUIRED )) || (( $MATLAB_REQUIRED )) || \
   else
     echo -e ' Select C compiler\n'
     CCOMPB=( `$LS $ARCH/ccompiler.${MCH}.${OS}.* $ARCH/ccompiler.all.all.*`)
-#   echo "${CMP} g95"
     if [ "${CMP}" == "g95" ]; then
-      declare -a CCOMP=( ${CCOMPB[@]/*.gcc/} )
+      declare -a CCOMPC=( ${CCOMPB[@]/*.gccomp4/} )
+      declare -a CCOMPD=( ${CCOMPC[@]/*.gcc/} )
+      declare -a CCOMPE=( ${CCOMPD[@]/*.gc5/} )
+      declare -a CCOMP=( ${CCOMPE[@]/*.gc6/} )
     else
       declare -a CCOMP=( ${CCOMPB[@]/*.g95/} )
     fi
@@ -518,6 +522,7 @@ if (( $AMPL_REQUIRED )) || (( $MATLAB_REQUIRED )) || \
     LIST=( ${CCOMP[@]} )
     let count=-1
     for i  in  ${CCOMP[@]}; do
+#     echo $i
       (( count++ ))
       CCOMP[$count]="`$SED q $i | $SED 's/^[# ]*//'`"
     done

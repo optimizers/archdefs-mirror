@@ -4,12 +4,12 @@
 #  C compilation and loading
 #
 
-CC=gcc
+CC=gcc-4.9
 CCBASIC='-c -ansi -pedantic -fPIC' # -pedantic-errors -fPIC'
 CCDEBUG= #-g -DDEBUG_GALAHAD
 CCFFLAGS='-lgfortran -lm'
 
-CXX=g++
+CXX=g++-4.9
 CXXBASIC='-c -std=c++11 -fPIC'
 CXXOPT=-O2
 CXXNOOPT=-O0

@@ -13,6 +13,7 @@ LIBCMD=''
 #for ifc versions 7-9 replace next line by
 #MODCMD='-module $MOD -I$MOD -Vaxlib'
 MODCMD='-module $MOD -I$MOD'
+MODCMDB='-I$MOD'
 MVMODS=':'
 OPTIMIZATION='-O'
 NOOPTIMIZATION='-O0'
